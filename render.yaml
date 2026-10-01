@@ -11,4 +11,4 @@ services:
       - key: NODE_ENV
         value: production
       - key: CLIENT_ORIGIN
-        value: https://chat-app-one-silk-54.vercel.app
+        value: https://chat-app-one-silk-54.vercel.app:443
