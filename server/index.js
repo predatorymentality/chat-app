@@ -8,12 +8,13 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
+const clientOrigin = process.env.CLIENT_ORIGIN || 'http://localhost:3000';
 const io = socketio(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: clientOrigin,
     methods: ['GET', 'POST']
   },
-  origins: 'http://localhost:3000'
+  origins: clientOrigin
 });
 
 app.use(cors());

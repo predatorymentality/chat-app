@@ -29,6 +29,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## Deploying the chat app
+
+The React client can be deployed to Vercel, but the Socket.IO server in `../server` must be deployed separately to a host that supports persistent Node.js processes and WebSockets. Configure that host to use the `server` directory as its project root and run `npm start`.
+
+Set `REACT_APP_SERVER_URL` in Vercel to the server's public HTTPS origin (for example, `https://your-chat-server.example.com`). Set `CLIENT_ORIGIN` on the server to the deployed client's exact origin (for example, `https://your-chat-app.vercel.app`). Redeploy the client after changing its environment variable and restart the server after changing its variable.
+
+For local development, both variables can be omitted: the client uses `http://localhost:5000` and the server allows `http://localhost:3000` by default.
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
