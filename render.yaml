@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: chat-app-server
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_ORIGIN
+        value: https://chat-app-one-silk-54.vercel.app
